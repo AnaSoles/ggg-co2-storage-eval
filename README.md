@@ -3,6 +3,14 @@
 `storageeval` is a small Python package for deterministic and probabilistic
 static CO2 storage-capacity assessment.
 
+## Run in Google Colab
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/AnaSoles/ggg-co2-storage-eval/blob/main/examples/storage_capacity_colab.ipynb)
+
+Click the button above, then choose **Runtime -> Run all**. No local Python or
+Codespace setup is required. Edit the values in the notebook's **Editable
+inputs** cell to assess another storage site.
+
 ## Capacity equation
 
 ```text
