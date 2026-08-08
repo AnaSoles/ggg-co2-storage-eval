@@ -1,0 +1,7 @@
+parameter,distribution,minimum,mode,maximum,unit
+gross_rock_volume,PERT,22.57,28.21,33.85,km3
+net_to_gross,PERT,0.20,0.25,0.30,fraction
+porosity,PERT,0.184,0.23,0.276,fraction
+co2_density,PERT,573.4,603.6,764.0,kg/m3
+storage_efficiency,PERT,0.05,0.10,0.20,fraction
+
