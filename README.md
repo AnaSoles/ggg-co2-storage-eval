@@ -56,10 +56,12 @@ result.plot_sensitivity()
 ```
 
 The Rødby notebook includes a live input table and a comparison with GEUS
-Report 2024/18, Table 8.5.1. Table 8.4.1 prints the maximum CO2 density as
-764.0 kg/m3, while Section 8.2.4 defines it as 10% above the 603.6 kg/m3 mode
-(663.96 kg/m3). The example uses the internally consistent 663.96 value, which
-closely reproduces the published capacity statistics.
+Report 2024/18, Table 8.5.1. Table 8.2.1 prints the maximum GRV as 23.9 km3,
+while Table 8.4.1 and the stated +/-20% method support 33.85 km3. Table 8.4.1
+also prints the maximum CO2 density as 764.0 kg/m3, while Section 8.2.4 defines
+it as 10% above the 603.6 kg/m3 mode (663.96 kg/m3). The example uses the
+internally consistent 33.85 and 663.96 values, which closely reproduce the
+published capacity statistics.
 
 The first three plots mirror the familiar `gppeval` presentation: a simulated
 PDF with a fitted curve and P90/P50/P10 markers, an exceedance curve, and a
