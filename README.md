@@ -43,7 +43,7 @@ site = StorageSite(
     grv=Distribution.pert(22.57, 28.21, 33.85),
     net_to_gross=Distribution.pert(0.20, 0.25, 0.30),
     porosity=Distribution.pert(0.184, 0.23, 0.276),
-    co2_density=Distribution.pert(573.4, 603.6, 764.0),
+    co2_density=Distribution.pert(573.4, 603.6, 663.96),
     storage_efficiency=Distribution.pert(0.05, 0.10, 0.20),
 )
 
@@ -51,8 +51,20 @@ result = simulate(site, iterations=100_000, seed=42)
 print(result.summary())
 result.plot_distribution()
 result.plot_exceedance()
+result.plot_capacity_ranges()
 result.plot_sensitivity()
 ```
+
+The Rødby notebook includes a live input table and a comparison with GEUS
+Report 2024/18, Table 8.5.1. Table 8.4.1 prints the maximum CO2 density as
+764.0 kg/m3, while Section 8.2.4 defines it as 10% above the 603.6 kg/m3 mode
+(663.96 kg/m3). The example uses the internally consistent 663.96 value, which
+closely reproduces the published capacity statistics.
+
+The first three plots mirror the familiar `gppeval` presentation: a simulated
+PDF with a fitted curve and P90/P50/P10 markers, an exceedance curve, and a
+linear confidence-range bar. For CO2 storage, the ranges are labelled as
+capacity estimates rather than reserves.
 
 The summary follows storage-industry exceedance notation: P90 is the 10th
 percentile (a conservative capacity), P50 is the median, and P10 is the 90th
