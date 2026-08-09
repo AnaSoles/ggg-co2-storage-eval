@@ -27,11 +27,20 @@ fractions, the result is numerically in million tonnes of CO2 (Mt).
 The equation implemented here is the static volumetric storage-capacity equation
 presented by Fyhn et al. (2023) in Section 5.4, *Storage capacity modelling*
 (report page 19), of [GEUS Report 2022/29: *CCS2022-2024 WP1: The Inez
-structure*](https://doi.org/10.22008/gpub/34664). For the wider methodological
-basis of volumetric CO2 storage-capacity estimation, see Bachu et al. (2007),
-[*CO2 storage capacity estimation: Methodology and
-gaps*](https://doi.org/10.1016/S1750-5836(07)00086-2), *International Journal
-of Greenhouse Gas Control*, 1(4), 430-443.
+structure*](https://doi.org/10.22008/gpub/34664). GEUS describes this as a
+widely accepted saline-aquifer storage equation and cites Goodman et al.
+(2011) as its methodological source:
+
+- Goodman, A., Hakala, J. A., Bromhal, G., Deel, D., Rodosta, T., Frailey, S.,
+  et al. (2011). [*U.S. DOE methodology for the development of geologic storage
+  potential for carbon dioxide at the national and regional
+  scale*](https://doi.org/10.1016/j.ijggc.2011.03.010). *International Journal
+  of Greenhouse Gas Control*, 5(4), 952-965.
+
+For the wider methodological basis of volumetric CO2 storage-capacity
+estimation, see Bachu et al. (2007), [*CO2 storage capacity estimation:
+Methodology and gaps*](https://doi.org/10.1016/S1750-5836(07)00086-2),
+*International Journal of Greenhouse Gas Control*, 1(4), 430-443.
 
 ### Input-Data References
 
