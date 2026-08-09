@@ -5,11 +5,13 @@ static CO2 storage-capacity assessment.
 
 ## Run in Google Colab
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/AnaSoles/ggg-co2-storage-eval/blob/main/examples/storage_capacity_colab.ipynb)
+[![Open Rødby in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/AnaSoles/ggg-co2-storage-eval/blob/main/examples/storage_capacity_colab.ipynb)
 
-Click the button above, then choose **Runtime -> Run all**. No local Python or
-Codespace setup is required. Edit the values in the notebook's **Editable
-inputs** cell to assess another storage site.
+[![Open Inez in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/AnaSoles/ggg-co2-storage-eval/blob/main/examples/inez_capacity_colab.ipynb)
+
+Click a button above, then choose **Runtime -> Run all**. No local Python or
+Codespace setup is required. Edit the values in the notebook's input cell to
+assess another storage site.
 
 ## Capacity equation
 
@@ -33,7 +35,7 @@ python -m pip install -e ".[plots,dev]"
 pytest
 ```
 
-## Example
+## Rødby example
 
 ```python
 from storageeval import Distribution, StorageSite, simulate
@@ -63,9 +65,30 @@ it as 10% above the 603.6 kg/m3 mode (663.96 kg/m3). The example uses the
 internally consistent 33.85 and 663.96 values, which closely reproduce the
 published capacity statistics.
 
-The first three plots mirror the familiar `gppeval` presentation: a simulated
-PDF with a fitted curve and P90/P50/P10 markers, an exceedance curve, and a
-linear confidence-range bar. For CO2 storage, the ranges are labelled as
+## Inez and Gassum examples
+
+The `examples` folder also contains official GEUS input tables for:
+
+- Inez – Haldager Sand Formation
+- Inez – Gassum Formation
+- Inez – Skagerrak Formation
+- Standalone onshore Gassum structure
+
+Run `examples/inez.py` to simulate the three Inez reservoirs independently
+and add their capacity samples trial by trial. Run
+`examples/gassum_structure.py` for the standalone Gassum assessment. See
+[`docs/geus_examples.md`](docs/geus_examples.md) for sources, published
+validation values, and the explanation of the 7% storage-efficiency mode in
+the Inez Gassum reservoir.
+
+In a PERT input, the mode is the most likely input value. It is sampled during
+Monte Carlo together with the other parameters. P90, P50 and P10 are calculated
+afterwards from the resulting capacity distribution; the mode is not applied
+to those percentiles after the calculation.
+
+The first three Rødby plots mirror the familiar `gppeval` presentation: a
+simulated PDF with a fitted curve and P90/P50/P10 markers, an exceedance curve,
+and a linear confidence-range bar. For CO2 storage, the ranges are labelled as
 capacity estimates rather than reserves.
 
 The summary follows storage-industry exceedance notation: P90 is the 10th
