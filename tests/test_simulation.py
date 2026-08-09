@@ -45,6 +45,30 @@ def test_rodby_reproduces_published_capacity_statistics():
         assert summary[key] == pytest.approx(expected, abs=1.0)
 
 
+def test_havnso_scenario_1_reproduces_published_capacity_statistics():
+    site = StorageSite(
+        "Havnsø Scenario 1",
+        Distribution.pert(2.9, 5.0, 8.0),
+        Distribution.pert(0.60, 0.75, 0.90),
+        Distribution.pert(0.175, 0.219, 0.263),
+        Distribution.pert(663.86, 698.8, 768.68),
+        Distribution.pert(0.05, 0.10, 0.20),
+    )
+    summary = simulate(site, 100_000, 42).summary()
+    published = {
+        "p90_mt": 41.25,
+        "p50_mt": 62.82,
+        "p10_mt": 90.42,
+        "mean_mt": 64.81,
+    }
+    # GEUS does not publish its iteration count, seed, or exact PERT
+    # implementation. The mean is reproduced closely; percentile differences
+    # of a few Mt are expected with a standard beta-PERT implementation.
+    assert summary["mean_mt"] == pytest.approx(published["mean_mt"], abs=1.0)
+    for key in ("p90_mt", "p50_mt", "p10_mt"):
+        assert summary[key] == pytest.approx(published[key], abs=5.0)
+
+
 def test_gppeleval_style_plots():
     import matplotlib
 
