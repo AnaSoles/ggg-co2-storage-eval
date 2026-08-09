@@ -22,6 +22,35 @@ SC = GRV × N/G × porosity × CO2 density × storage efficiency
 If GRV is in km3, density is in kg/m3, and the other inputs are decimal
 fractions, the result is numerically in million tonnes of CO2 (Mt).
 
+### Formula and input-data references
+
+The equation implemented here is the static volumetric storage-capacity equation
+presented by Fyhn et al. (2023) in Section 5.4, *Storage capacity modelling*
+(report page 19), of [GEUS Report 2022/29: *CCS2022-2024 WP1: The Inez
+structure*](https://doi.org/10.22008/gpub/34664). For the wider methodological
+basis of volumetric CO2 storage-capacity estimation, see Bachu et al. (2007),
+[*CO2 storage capacity estimation: Methodology and
+gaps*](https://doi.org/10.1016/S1750-5836(07)00086-2), *International Journal
+of Greenhouse Gas Control*, 1(4), 430-443.
+
+The example input files and published validation values come from these official
+GEUS reports:
+
+- **Rødby:** Abramovitz et al. (2024),
+  [GEUS Report 2024/18](https://doi.org/10.22008/gpub/34739), input Table 8.4.1
+  and results Table 8.5.1.
+- **Inez (Haldager Sand, Gassum and Skagerrak reservoirs):** Fyhn et al. (2023),
+  [GEUS Report 2022/29](https://doi.org/10.22008/gpub/34664), input Tables
+  8.1.5.1-8.1.5.3 (report page 44) and results Tables 8.2.1-8.2.4
+  (report page 46).
+- **Standalone Gassum structure:** Keiding et al. (2024),
+  [GEUS Report 2024/25](https://doi.org/10.22008/gpub/34746), input Table 8.4.1
+  (report page 130) and results Table 8.5.1 (report page 131).
+
+See [GEUS example documentation and references](docs/geus_examples.md) for the
+complete source notes, input-value provenance, report inconsistencies and
+validation comparisons.
+
 ## Install
 
 ```bash
