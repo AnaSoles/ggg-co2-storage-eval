@@ -15,9 +15,9 @@ assess another storage site.
 
 ## Capacity equation
 
-```text
-SC = GRV × N/G × porosity × CO2 density × storage efficiency
-```
+$$
+SC = GRV \times (N/G) \times \phi \times \rho_{CO_2} \times S_{eff}
+$$
 
 If GRV is in km3, density is in kg/m3, and the other inputs are decimal
 fractions, the result is numerically in million tonnes of CO2 (Mt).
