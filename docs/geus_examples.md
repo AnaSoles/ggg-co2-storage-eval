@@ -42,6 +42,46 @@ is retained as separate evidence for the later technical-risk workflow. Its
 approximately 270 Mt result belongs to a different version-0 model and must not
 be used as the validation target for this updated static notebook.
 
+## Havnsø pressure and injectivity screening
+
+The second Havnsø notebook connects the 2023 static Monte Carlo samples to a
+screening surrogate normalized to the dynamic reference case in GEUS Report
+2020/48. GEUS reports the following values or modelling choices:
+
+| Input or criterion | GEUS value |
+|---|---:|
+| Initial datum pressure | 130 bar at 1,200 m |
+| Initial temperature | 42 °C |
+| Injection wells | 3 |
+| Rate per well | 1 Mt/year |
+| Injection period | 90 years |
+| Cumulative injected mass | 270 Mt |
+| Reported maximum pressure endpoint | 240 bar |
+| Fracture constraint | 75% of lithostatic pressure |
+| Base dynamic N/G | 0.5 |
+| N/G sensitivity | 0.9 |
+| Absolute-permeability factors | 0.5 and 2 |
+| Residual-water saturation | 0.42 base; 0.30 sensitivity |
+
+The report publishes pressure plots and qualitative sensitivity outcomes, but
+not a transferable pressure equation, numerical pressure result for each
+sensitivity, or probability weights. The notebook therefore labels its
+calculation as a **normalized screening surrogate**, not a reproduction of
+Eclipse 100. It scales the reference pressure increase with cumulative mass,
+field rate, inverse permeability factor and inverse N/G. The per-well
+injectivity limit is scaled with permeability factor and N/G.
+
+The report's English summary calls 240 bar an "overpressure". The screening
+treats it as the absolute endpoint pressure because adding 240 bar to the
+130-bar initial pressure would conflict with the report's statement that the
+75%-of-lithostatic fracture constraint was respected. This interpretation is
+made visible and editable in the notebook.
+
+The updated 2023 capacity model and the 2020 version-0 dynamic model are not
+silently merged as though they were one calibrated model. The static samples
+remain the current capacity evidence; the older dynamic result provides only
+the normalization and sensitivity directions for this provisional gate.
+
 ## Inez
 
 Inez has three assessed reservoirs: Haldager Sand, Gassum Formation, and
