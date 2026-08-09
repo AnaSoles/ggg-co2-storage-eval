@@ -1,7 +1,7 @@
 # CO2 Storage Eval
 
 `storageeval` is a small Python package for deterministic and probabilistic
-static CO2 storage-capacity assessment.
+CO2 storage-capacity assessment, followed by transparent technical screening.
 
 ## Run in Google Colab
 
@@ -12,6 +12,16 @@ static CO2 storage-capacity assessment.
 Use this notebook for the **main Havnsø Scenario 1 assessment of the Gassum
 Formation**, based on the updated GEUS 2023/38 inputs. It follows the same
 tables, Monte Carlo workflow and plots as the Rødby notebook.
+
+### Havnsø – Pressure and Injectivity Screening
+
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/AnaSoles/ggg-co2-storage-eval/blob/main/examples/colab_havnso_pressure_injectivity.ipynb)
+
+Use this notebook for the **next Havnsø decision gate**. It combines every
+static-capacity iteration with pressure and per-well injectivity criteria
+normalized to the preliminary dynamic simulation in GEUS Report 2020/48.
+The output is a screening probability of technical success, not an Eclipse
+reservoir-simulation result.
 
 ### Rødby – Storage Capacity Assessment
 
@@ -164,6 +174,44 @@ count, random seed or exact PERT implementation. The updated static assessment
 must not be confused with the preliminary Havnsø dynamic model in GEUS Report
 2020/48.
 
+## Havnsø pressure and injectivity example
+
+```python
+from storageeval import (
+    Distribution,
+    TechnicalScreeningCase,
+    simulate_technical_screening,
+)
+
+technical_case = TechnicalScreeningCase(
+    name="Havnsø – 60 Mt technical screening",
+    target_mass_mt=60.0,
+    wells=3,
+    rate_mtpy_per_well=1.0,
+    permeability_factor=Distribution.pert(0.5, 1.0, 2.0),
+    initial_pressure_bar=130.0,
+    pressure_limit_bar=240.0,
+    reference_mass_mt=270.0,
+    reference_wells=3,
+    reference_rate_mtpy_per_well=1.0,
+    reference_net_to_gross=0.5,
+)
+
+technical_result = simulate_technical_screening(
+    technical_case, result, seed=43
+)
+print(technical_result.summary())
+```
+
+The 60 Mt target is an editable project requirement selected near the updated
+GEUS 2023/38 P50 of 62.82 Mt; it is not a GEUS project-design target. The
+pressure calculation is a normalized surrogate anchored to the 2020 reference
+case (130 bar initial pressure, 3 wells at 1 Mt/year each, 90 years and 270 Mt
+at the reported pressure endpoint). Permeability factors 0.5 and 2 reproduce
+the direction of the published sensitivities. This workflow is useful for
+screening and software development but must be replaced or calibrated with an
+updated site-specific dynamic model before project decisions.
+
 The Rødby notebook includes a live input table and a comparison with GEUS
 Report 2024/18, Table 8.5.1. Table 8.2.1 prints the maximum GRV as 23.9 km3,
 while Table 8.4.1 and the stated +/-20% method support 33.85 km3. Table 8.4.1
@@ -242,8 +290,10 @@ result = simulate(site, iterations=100_000, seed=42)
 
 ## Scope
 
-Version 0.1 covers static volumetric capacity. It does not yet model pressure
-constraints, injectivity, plume migration, dynamic simulation, or economics.
+Version 0.1 covers static volumetric capacity and a reference-case-normalized
+pressure/injectivity screening gate. It does not perform numerical reservoir
+simulation, plume migration, geomechanics, well design, leakage-consequence
+analysis, or economics.
 
 ## License
 
