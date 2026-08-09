@@ -5,9 +5,9 @@ static CO2 storage-capacity assessment.
 
 ## Run in Google Colab
 
-[![Open Rødby in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/AnaSoles/ggg-co2-storage-eval/blob/main/examples/storage_capacity_colab.ipynb)
+[![Open Rødby in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/AnaSoles/ggg-co2-storage-eval/blob/main/examples/colab_storage_capacity.ipynb)
 
-[![Open Inez in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/AnaSoles/ggg-co2-storage-eval/blob/main/examples/inez_capacity_colab.ipynb)
+[![Open Inez in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/AnaSoles/ggg-co2-storage-eval/blob/main/examples/colab_inez_capacity.ipynb)
 
 Click a button above, then choose **Runtime -> Run all**. No local Python or
 Codespace setup is required. Edit the values in the notebook's input cell to
@@ -137,9 +137,9 @@ The `examples` folder also contains official GEUS input tables for:
 - Inez – Skagerrak Formation
 - Standalone onshore Gassum structure
 
-Run `examples/inez.py` to simulate the three Inez reservoirs independently
+Run `examples/code_inez.py` to simulate the three Inez reservoirs independently
 and add their capacity samples trial by trial. Run
-`examples/gassum_structure.py` for the standalone Gassum assessment. See
+`examples/code_gassum_structure.py` for the standalone Gassum assessment. See
 [`docs/geus_examples.md`](docs/geus_examples.md) for sources, published
 validation values, and the explanation of the 7% storage-efficiency mode in
 the Inez Gassum reservoir.
@@ -192,7 +192,7 @@ Inputs can also be loaded from the included CSV format:
 ```python
 from storageeval import load_site_csv, simulate
 
-site = load_site_csv("examples/rodby_inputs.csv", name="Rødby – Bunter Sandstone")
+site = load_site_csv("examples/data_rodby_inputs.csv", name="Rødby – Bunter Sandstone")
 result = simulate(site, iterations=100_000, seed=42)
 ```
 
