@@ -1,4 +1,4 @@
-# GEUS Inez and Gassum examples
+# GEUS storage-capacity examples
 
 The input CSV files reproduce the static volumetric assessments in two GEUS
 reports using independent beta-PERT distributions:
@@ -6,6 +6,41 @@ reports using independent beta-PERT distributions:
 ```text
 SC = GRV × N/G × porosity × CO2 density × storage efficiency
 ```
+
+## Havnsø main study
+
+The main Havnsø example uses **Scenario 1** for the Gassum Formation from
+[GEUS Report 2023/38](https://doi.org/10.22008/gpub/34705), input Table 8.2.3
+(report page 152) and results Table 8.3.1 (report page 154). It is the updated
+static assessment based on the 2022 seismic survey and replaces the older 2020
+static inputs as the project's primary Havnsø capacity case.
+
+The published inputs are independent PERT distributions:
+
+| Parameter | Minimum | Mode | Maximum |
+|---|---:|---:|---:|
+| GRV (km3) | 2.9 | 5.0 | 8.0 |
+| Net-to-gross | 0.60 | 0.75 | 0.90 |
+| Porosity | 0.175 | 0.219 | 0.263 |
+| CO2 density (kg/m3) | 663.86 | 698.8 | 768.68 |
+| Storage efficiency | 0.05 | 0.10 | 0.20 |
+
+GEUS publishes P90 41.25, P50 62.82, P10 90.42 and mean 64.81 Mt CO2. A
+standard beta-PERT implementation closely reproduces the mean, while the
+percentiles differ by a few Mt because the report does not document its exact
+PERT implementation, iteration count or random seed.
+
+Report 2023/38 also defines Scenarios 2 and 3. Scenario 3's input Table 8.2.5
+prints net-to-gross as `0.60 / 0.33 / 0.90`, which is not a valid PERT ordering
+and conflicts with the report's stated approximately ±20% rule. The main
+notebook therefore uses Scenario 1 only and does not silently correct or sample
+the Scenario 3 typo.
+
+The preliminary dynamic simulation in
+[GEUS Report 2020/48](https://data.geus.dk/pure-pdf/GEUS-R_2020_48_web.pdf)
+is retained as separate evidence for the later technical-risk workflow. Its
+approximately 270 Mt result belongs to a different version-0 model and must not
+be used as the validation target for this updated static notebook.
 
 ## Inez
 
