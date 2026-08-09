@@ -5,6 +5,14 @@ static CO2 storage-capacity assessment.
 
 ## Run in Google Colab
 
+### Havnsø – Main Storage Capacity Study
+
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/AnaSoles/ggg-co2-storage-eval/blob/main/examples/colab_havnso_capacity.ipynb)
+
+Use this notebook for the **main Havnsø Scenario 1 assessment of the Gassum
+Formation**, based on the updated GEUS 2023/38 inputs. It follows the same
+tables, Monte Carlo workflow and plots as the Rødby notebook.
+
 ### Rødby – Storage Capacity Assessment
 
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/AnaSoles/ggg-co2-storage-eval/blob/main/examples/colab_storage_capacity.ipynb)
@@ -58,6 +66,9 @@ GEUS reports:
 - **Rødby:** Abramovitz et al. (2024),
   [GEUS Report 2024/18](https://doi.org/10.22008/gpub/34739), input Table 8.4.1
   and results Table 8.5.1.
+- **Havnsø:** Gregersen et al. (2023),
+  [GEUS Report 2023/38](https://doi.org/10.22008/gpub/34705), Scenario 1 input
+  Table 8.2.3 (report page 152) and results Table 8.3.1 (report page 154).
 - **Inez (Haldager Sand, Gassum and Skagerrak reservoirs):** Fyhn et al. (2023),
   [GEUS Report 2022/29](https://doi.org/10.22008/gpub/34664), input Tables
   8.1.5.1-8.1.5.3 (report page 44) and results Tables 8.2.1-8.2.4
@@ -127,6 +138,31 @@ result.plot_exceedance()
 result.plot_capacity_ranges()
 result.plot_sensitivity()
 ```
+
+## Havnsø main-study example
+
+```python
+from storageeval import Distribution, StorageSite, simulate
+
+site = StorageSite(
+    name="Havnsø – Gassum Formation – Scenario 1",
+    grv=Distribution.pert(2.9, 5.0, 8.0),
+    net_to_gross=Distribution.pert(0.60, 0.75, 0.90),
+    porosity=Distribution.pert(0.175, 0.219, 0.263),
+    co2_density=Distribution.pert(663.86, 698.8, 768.68),
+    storage_efficiency=Distribution.pert(0.05, 0.10, 0.20),
+)
+
+result = simulate(site, iterations=100_000, seed=42)
+print(result.summary())
+```
+
+GEUS Report 2023/38 publishes P90 41.25, P50 62.82, P10 90.42 and mean
+64.81 Mt CO2 for Scenario 1. The package reproduces the mean closely. Its
+percentiles differ by a few Mt because the report does not state the iteration
+count, random seed or exact PERT implementation. The updated static assessment
+must not be confused with the preliminary Havnsø dynamic model in GEUS Report
+2020/48.
 
 The Rødby notebook includes a live input table and a comparison with GEUS
 Report 2024/18, Table 8.5.1. Table 8.2.1 prints the maximum GRV as 23.9 km3,
