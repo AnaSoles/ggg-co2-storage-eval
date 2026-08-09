@@ -1,0 +1,12 @@
+parameter,value,unit,status,source_or_basis
+initial_pressure,130,bar,GEUS-reported,GEUS 2020/48 Table 1
+pressure_endpoint,240,bar,GEUS-reported interpreted as absolute,GEUS 2020/48 summary and base case
+reference_mass,270,Mt,GEUS-reported,GEUS 2020/48 base case
+reference_wells,3,count,GEUS-reported,GEUS 2020/48 base case
+reference_rate_per_well,1,Mt/year/well,GEUS-reported,GEUS 2020/48 base case
+reference_duration,90,years,GEUS-reported,GEUS 2020/48 base case
+reference_net_to_gross,0.5,fraction,GEUS-reported,GEUS 2020/48 base dynamic model
+permeability_factor_minimum,0.5,multiplier,GEUS sensitivity converted to PERT bound,GEUS 2020/48
+permeability_factor_mode,1,multiplier,reference case,GEUS 2020/48
+permeability_factor_maximum,2,multiplier,GEUS sensitivity converted to PERT bound,GEUS 2020/48
+target_mass,60,Mt,user-editable screening assumption,Selected near GEUS 2023/38 P50 62.82 Mt
