@@ -22,7 +22,7 @@ SC = GRV × N/G × porosity × CO2 density × storage efficiency
 If GRV is in km3, density is in kg/m3, and the other inputs are decimal
 fractions, the result is numerically in million tonnes of CO2 (Mt).
 
-### Formula and input-data references
+### Bibliographic References
 
 The equation implemented here is the static volumetric storage-capacity equation
 presented by Fyhn et al. (2023) in Section 5.4, *Storage capacity modelling*
@@ -32,6 +32,8 @@ basis of volumetric CO2 storage-capacity estimation, see Bachu et al. (2007),
 [*CO2 storage capacity estimation: Methodology and
 gaps*](https://doi.org/10.1016/S1750-5836(07)00086-2), *International Journal
 of Greenhouse Gas Control*, 1(4), 430-443.
+
+### Input-Data References
 
 The example input files and published validation values come from these official
 GEUS reports:
