@@ -5,11 +5,19 @@ static CO2 storage-capacity assessment.
 
 ## Run in Google Colab
 
-[![Open Rødby in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/AnaSoles/ggg-co2-storage-eval/blob/main/examples/colab_storage_capacity.ipynb)
+### Rødby – Storage Capacity Assessment
 
-[![Open Inez in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/AnaSoles/ggg-co2-storage-eval/blob/main/examples/colab_inez_capacity.ipynb)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/AnaSoles/ggg-co2-storage-eval/blob/main/examples/colab_storage_capacity.ipynb)
 
-Click a button above, then choose **Runtime -> Run all**. No local Python or
+Use this notebook for the **Rødby / general single-site storage-capacity assessment**.
+
+### Inez – Storage Capacity Assessment
+
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/AnaSoles/ggg-co2-storage-eval/blob/main/examples/colab_inez_capacity.ipynb)
+
+Use this notebook for the **Inez assessment covering Haldager Sand, Gassum and Skagerrak reservoirs**.
+
+Click a button above, then choose **Runtime → Run all**. No local Python or
 Codespace setup is required. Edit the values in the notebook's input cell to
 assess another storage site.
 
