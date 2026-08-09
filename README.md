@@ -35,6 +35,29 @@ python -m pip install -e ".[plots,dev]"
 pytest
 ```
 
+## Libraries used
+
+The project is written in Python 3.10+ and uses a small set of libraries:
+
+| Library | How it is used | Installation |
+|---|---|---|
+| [NumPy](https://numpy.org/) | Monte Carlo sampling, array calculations, percentiles, summary statistics, and rank-correlation sensitivity | Core dependency |
+| [Matplotlib](https://matplotlib.org/) | Probability-distribution, exceedance, capacity-range, and sensitivity plots | Optional `plots` dependency |
+| [pandas](https://pandas.pydata.org/) | Input, source, and GEUS comparison tables in the Colab notebooks | Included in Google Colab; install separately for local notebook use |
+| [pytest](https://pytest.org/) | Automated tests and checks against published GEUS capacity results | Optional `dev` dependency |
+| Python standard library | CSV reading, file paths, and data classes through `csv`, `pathlib`, and `dataclasses` | Included with Python |
+
+NumPy is the only required third-party dependency for the core calculation
+package. Matplotlib is loaded only when plots are requested. pandas is used for
+the interactive notebook tables and is not required by the core
+`storageeval` API.
+
+For local notebook use, the complete environment can be installed with:
+
+```bash
+python -m pip install -e ".[plots,dev]" pandas
+```
+
 ## Rødby example
 
 ```python
