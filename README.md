@@ -86,6 +86,34 @@ Monte Carlo together with the other parameters. P90, P50 and P10 are calculated
 afterwards from the resulting capacity distribution; the mode is not applied
 to those percentiles after the calculation.
 
+## Recommendation for future storage-efficiency evaluations
+
+Storage efficiency is not a universal constant, and a mode such as 7% or 10%
+should not be reused automatically for another reservoir. For future
+prospective assessments:
+
+1. Classify the storage setting using the available geology, including
+   lithology, depositional environment, reservoir heterogeneity, and open,
+   semi-closed, or closed boundary conditions.
+2. Use the appropriate efficiency-factor ranges in
+   [DOE/NETL CO2-SCREEN](https://edx.netl.doe.gov/dataset/co2-screen) as an
+   initial screening reference.
+3. Select and document the PERT minimum, mode, and maximum, including the
+   source and geological rationale for each value. CO2-SCREEN supports this
+   selection but does not provide one universal mode for every site.
+4. Where evidence is insufficient to distinguish between plausible modes
+   (for example, 7% and 10%), report both as sensitivity scenarios rather than
+   presenting one value as precisely known.
+5. Replace or narrow the screening assumptions as site-specific well, core,
+   pressure, seismic, and dynamic reservoir-simulation results become
+   available.
+
+These ranges are suitable for estimating a prospective static storage
+resource. They should not be interpreted as proof of injectivity, operational
+capacity, or commercial viability. See the
+[CO2-SCREEN User's Manual](https://www.netl.doe.gov/projects/files/CO2SCREENUsersManualPythonV4.1_040822.pdf)
+for the DOE/NETL methodology.
+
 The first three Rødby plots mirror the familiar `gppeval` presentation: a
 simulated PDF with a fitted curve and P90/P50/P10 markers, an exceedance curve,
 and a linear confidence-range bar. For CO2 storage, the ranges are labelled as
