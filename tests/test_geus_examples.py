@@ -9,7 +9,7 @@ EXAMPLES = Path("examples")
 
 
 def test_gassum_structure_reproduces_geus_capacity():
-    site = load_site_csv(EXAMPLES / "gassum_structure_inputs.csv")
+    site = load_site_csv(EXAMPLES / "data_gassum_structure_inputs.csv")
     summary = simulate(site, iterations=200_000, seed=42).summary()
 
     assert abs(summary["p90_mt"] - 325.36) < 10
@@ -20,9 +20,9 @@ def test_gassum_structure_reproduces_geus_capacity():
 
 def test_inez_combined_reproduces_geus_capacity():
     filenames = [
-        "inez_haldager_inputs.csv",
-        "inez_gassum_inputs.csv",
-        "inez_skagerrak_inputs.csv",
+        "data_inez_haldager_inputs.csv",
+        "data_inez_gassum_inputs.csv",
+        "data_inez_skagerrak_inputs.csv",
     ]
     capacities = []
     for offset, filename in enumerate(filenames):

@@ -12,9 +12,9 @@ ITERATIONS = 100_000
 SEED = 42
 
 reservoir_files = {
-    "Haldager Sand": "inez_haldager_inputs.csv",
-    "Gassum Formation": "inez_gassum_inputs.csv",
-    "Skagerrak Formation": "inez_skagerrak_inputs.csv",
+    "Haldager Sand": "data_inez_haldager_inputs.csv",
+    "Gassum Formation": "data_inez_gassum_inputs.csv",
+    "Skagerrak Formation": "data_inez_skagerrak_inputs.csv",
 }
 
 results = {}
