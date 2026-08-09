@@ -88,29 +88,30 @@ to those percentiles after the calculation.
 
 ## Recommendation for future storage-efficiency evaluations
 
-Storage efficiency is not a universal constant, and a mode such as 7% or 10%
-should not be reused automatically for another reservoir. For future
-prospective assessments:
+Storage efficiency is not a universal constant, so a mode such as 7% or 10%
+may not be representative of every reservoir. For future prospective
+assessments, the following considerations may help guide the selection:
 
-1. Classify the storage setting using the available geology, including
-   lithology, depositional environment, reservoir heterogeneity, and open,
-   semi-closed, or closed boundary conditions.
-2. Use the appropriate efficiency-factor ranges in
-   [DOE/NETL CO2-SCREEN](https://edx.netl.doe.gov/dataset/co2-screen) as an
-   initial screening reference.
-3. Select and document the PERT minimum, mode, and maximum, including the
-   source and geological rationale for each value. CO2-SCREEN supports this
-   selection but does not provide one universal mode for every site.
-4. Where evidence is insufficient to distinguish between plausible modes
-   (for example, 7% and 10%), report both as sensitivity scenarios rather than
-   presenting one value as precisely known.
-5. Replace or narrow the screening assumptions as site-specific well, core,
-   pressure, seismic, and dynamic reservoir-simulation results become
-   available.
+1. The storage setting could be classified using the available geology,
+   including lithology, depositional environment, reservoir heterogeneity,
+   and open, semi-closed, or closed boundary conditions.
+2. The relevant efficiency-factor ranges in
+   [DOE/NETL CO2-SCREEN](https://edx.netl.doe.gov/dataset/co2-screen) may
+   provide a useful initial screening reference.
+3. It may be helpful to document the selected PERT minimum, mode, and maximum,
+   together with the source and geological rationale for each value.
+   CO2-SCREEN can support this selection, although it does not provide one
+   universal mode for every site.
+4. Where the available evidence does not clearly distinguish between
+   plausible modes (for example, 7% and 10%), both values could be explored as
+   sensitivity scenarios.
+5. As site-specific well, core, pressure, seismic, and dynamic
+   reservoir-simulation results become available, they may be used to refine
+   or narrow the initial screening assumptions.
 
-These ranges are suitable for estimating a prospective static storage
-resource. They should not be interpreted as proof of injectivity, operational
-capacity, or commercial viability. See the
+These ranges may be useful for estimating a prospective static storage
+resource. However, they do not by themselves demonstrate injectivity,
+operational capacity, or commercial viability. See the
 [CO2-SCREEN User's Manual](https://www.netl.doe.gov/projects/files/CO2SCREENUsersManualPythonV4.1_040822.pdf)
 for the DOE/NETL methodology.
 
