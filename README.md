@@ -39,6 +39,12 @@ Click a button above, then choose **Runtime → Run all**. No local Python or
 Codespace setup is required. Edit the values in the notebook's input cell to
 assess another storage site.
 
+### MCDM — CO₂ Storage Site Weight Sensitivity (illustrative)
+
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/AnaSoles/ggg-co2-storage-eval/blob/feature/mcdm-weight-sensitivity-example/examples/colab_mcdm_sensitivity.ipynb)
+
+Compare three **fictional** CO₂ storage sites with weighted-sum MCDM. Edit 1–5 desirability scores and criterion weights, run one-at-a-time weight sensitivity, inspect the ranking curves, and export a CSV. This is separate from the geological storage-capacity simulation. See [methodology and limitations](docs/mcdm_sensitivity_example.md).
+
 ## Capacity equation
 
 $$
